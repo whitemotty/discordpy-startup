@@ -3,7 +3,7 @@ import discord
 import os
 import traceback
 
-bot = commands.Bot(command_prefix='*')
+bot = commands.Bot(command_prefix='*',activity=discord.Game("Qiita"))
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
