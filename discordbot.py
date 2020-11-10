@@ -15,10 +15,12 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
+    """
     if message.author.bot:
         return
     if message.mentions:
         await message.send('草')
+    """
     if message.content.startswith('<@!337590899775242240>')
         await message.send('すまねぇ、今日は先約有りや…')
     await bot.process_commands(message)
