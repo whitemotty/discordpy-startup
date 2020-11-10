@@ -22,11 +22,11 @@ async def on_message(message):
         await message.channel.send('草')
     if '<@!337590899775242240>' in message.content:
         await message.channel.send('すまねぇ、今日は先約有りや…')
-    if message == "*job":
+    if message.content.startswith('*job')
         await message.channel.send('今日はオープンクローズかな')
-    if message == "*today":
+    if message.content.startswith('*today')
         await message.channel.send('すまねぇ、今日は遊べないや')
-    if message == "*help":
+    if message.content.startswith('*help')
         embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot. List of commands are:", color=0xeee657)
         embed.add_field(name="mention to ゆーしbot", value="笑われます", inline=False)
         embed.add_field(name="mention to オープンクローズ", value="ゆーしの代わりに返信します", inline=False)
