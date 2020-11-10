@@ -16,7 +16,7 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    if random.randrange(10) < 3:
+    if random.randrange(10) < 2:
         if message.author.bot:
             return
         if message.content.startswith('<@!775343042567340053>'):
@@ -36,7 +36,7 @@ async def today(ctx):
 
 @bot.command()
 async def help(ctx):
-    embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot. ゆーし always works at McDonald's. There's a 30% chance to reply.", color=0xeee657)
+    embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot.\nゆーし always works at McDonald's.\nThere's a 20% chance to reply.", color=0xeee657)
 
     embed.add_field(name="mention to ゆーしbot", value="笑われます", inline=False)
     embed.add_field(name="mention to オープンクローズ", value="ゆーしの代わりに返信します", inline=False)
