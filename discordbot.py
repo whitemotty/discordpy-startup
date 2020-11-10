@@ -30,6 +30,7 @@ async def job(ctx):
 async def today(ctx):
     await ctx.send('すまねぇ、今日は遊べないや')
 
+"""
 @bot.command()
 async def help(ctx):
     embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot. List of commands are:", color=0xeee657)
@@ -42,5 +43,6 @@ async def help(ctx):
     embed.add_field(name="*today", value="今日の予定を伝えます", inline=False)
 
     await ctx.send(embed=embed)
+"""
 
 bot.run(token)
