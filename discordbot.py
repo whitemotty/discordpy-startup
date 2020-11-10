@@ -33,7 +33,7 @@ async def today(ctx):
 
 @bot.command()
 async def help(ctx):
-    embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot. List of commands are:", color=0xeee657)
+    embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot. ゆーし always works at McDonald's.", color=0xeee657)
 
     embed.add_field(name="mention to ゆーしbot", value="笑われます", inline=False)
     embed.add_field(name="mention to オープンクローズ", value="ゆーしの代わりに返信します", inline=False)
