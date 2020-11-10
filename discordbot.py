@@ -60,7 +60,7 @@ async def on_voice_state_update(member, before, after):
         if before.channel is None: 
             embed = discord.Embed(title="通話開始", description="通話が開始されました．俺はバイトあるから行けないや.", color=0x66cdaa)
             embed.add_field(name="`ボイスチャンネル`", value=after.channel.name, inline=True)
-            embed.add_field(name="`開始者`", value=menber.name, inline=True)
+            embed.add_field(name="`開始者`", value=member.name, inline=True)
             await alert_channel.send(embed=embed)
 
 bot.run(token)
