@@ -22,6 +22,7 @@ async def on_message(message):
         await message.channel.send('草')
     if '<@!337590899775242240>' in message.content:
         await message.channel.send('すまねぇ、今日は先約有りや…')
+    #await bot.process_commands(message)
 
 @bot.command()
 async def job(ctx):
@@ -31,6 +32,7 @@ async def job(ctx):
 async def today(ctx):
     await ctx.send('すまねぇ、今日は遊べないや')
 
+"""
 @bot.command()
 async def help(ctx):
     embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot. List of commands are:", color=0xeee657)
@@ -43,5 +45,6 @@ async def help(ctx):
     embed.add_field(name="*today", value="今日の予定を伝えます", inline=False)
 
     await ctx.send(embed=embed)
+"""
 
 bot.run(token)
