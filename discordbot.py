@@ -2,6 +2,7 @@ from discord.ext import commands
 import discord
 import os
 import traceback
+import random
 
 bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイト"),help_command=None)
 bot.remove_command("help")
@@ -15,13 +16,15 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    if message.author.bot:
-        return
-    if message.content.startswith('<@!775343042567340053>'):
-        await message.channel.send('草')
-    if message.content.startswith('<@!337590899775242240>'):
-        await message.channel.send('すまねぇ、今日は先約有りや…')
-    await bot.process_commands(message)
+    if random.randrange(10) == 0:
+        if message.author.bot:
+            return
+        if message.content.startswith('<@!775343042567340053>'):
+            await message.channel.send('草')
+        if message.content.startswith('<@!337590899775242240>'):
+            await message.channel.send('すまねぇ、今日は先約有りや…')
+        await bot.process_commands(message)
+    return
     
 @bot.command()
 async def job(ctx):
