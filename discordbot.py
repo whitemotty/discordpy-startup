@@ -20,7 +20,7 @@ async def on_message(message):
     if random.randrange(10) < 2:
         if message.author.bot:
             return
-        if message.content.startswith(':poop:'):
+        if message.content.startswith('💩'):
             await message.channel.send(':poop:')
         if message.content.startswith('<@!775343042567340053>'):
             await message.channel.send('草')
