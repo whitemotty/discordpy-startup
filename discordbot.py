@@ -22,7 +22,7 @@ async def on_message(message):
         await message.channel.send('草')
     if '<@!337590899775242240>' in message.content:
         await message.channel.send('すまねぇ、今日は先約有りや…')
-    await bot.process_commands(message)
+    #await bot.process_commands(message)
 
 @bot.command()
 async def job(ctx):
