@@ -3,7 +3,6 @@ import discord
 import os
 import traceback
 
-client = discord.Client()
 bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイト"),help_command=None)
 bot.remove_command("help")
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -18,7 +17,7 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     if message.author.bot:
         return
-    if client.user in message.mentions:
+    if message.mentions:
         await message.send('草')
     if message.content.startswith('<@!337590899775242240>')
         await message.send('すまねぇ、今日は先約有りや…')
