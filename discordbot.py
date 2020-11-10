@@ -1,6 +1,5 @@
 import discord
 import os
-import traceback
 
 client = discord.Client(activity=discord.Game("マックのバイト"))
 token = os.environ['DISCORD_BOT_TOKEN']
