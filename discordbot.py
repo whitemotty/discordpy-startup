@@ -16,12 +16,12 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content in '<@!337590899775242240>':
-        await message.channel.send('にゃーん')
+    if client.user in message.mentions:
+        await message.channel.send('草')
+    if '<@!337590899775242240>' in message.content:
+        await message.channel.send('すまねぇ、今日は先約有りや…')
 
 @bot.command()
 async def job(ctx):
