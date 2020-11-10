@@ -46,14 +46,21 @@ async def today(ctx):
 @bot.command()
 async def help(ctx):
     embed = discord.Embed(title="ゆーしbot help", description="A Very Nice ゆーしbot.\nゆーし always works at McDonald's.\nThere's a 20% chance to reply.", color=0xeee657)
-
     embed.add_field(name="mention to ゆーしbot", value="笑われます", inline=False)
     embed.add_field(name="mention to オープンクローズ", value="ゆーしの代わりに返信します", inline=False)
-    
     embed.add_field(name="*help", value="コマンド一覧の表示をします", inline=False)
     embed.add_field(name="*job", value="今日のバイトのシフトを伝えます", inline=False)
     embed.add_field(name="*today", value="今日の予定を伝えます", inline=False)
-
     await ctx.send(embed=embed)
+    
+@bot.event
+async def on_voice_state_update(member, before, after): 
+    if member.guild.id == 644381235753385985 and (before.channel != after.channel):
+        alert_channel = bot.get_channel(644381236424343552)
+        if before.channel is None: 
+            embed = discord.Embed(title:"通話開始", description:'通話が開始されました．俺はバイトあるから行けないや.', color:67CCAAFF,
+                                  fields:[{name:"`ボイスチャンネル`", value:after.channel.name, inline:true},
+                                          {name:"`開始者`", value:menber.name, inline:true}])
+            await alert_channel.send(embed)
 
 bot.run(token)
