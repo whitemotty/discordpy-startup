@@ -13,17 +13,15 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-"""
 @bot.event
 async def on_message(message):
-    if message.author.bot:
-        return
-    if client.user in message.mentions:
-        await message.send('草')
-    if message.content.startswith('<@!337590899775242240>')
-        await message.send('すまねぇ、今日は先約有りや…')
+    #if message.author.bot:
+    #    return
+    #if client.user in message.mentions:
+    #    await message.send('草')
+    #if message.content.startswith('<@!337590899775242240>')
+    #    await message.send('すまねぇ、今日は先約有りや…')
     await bot.process_commands(message)
-"""
     
 @bot.command()
 async def job(ctx):
