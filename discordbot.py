@@ -22,7 +22,7 @@ async def on_message(message):
         await message.send('草')
     """
     if message.content.startswith('<@!337590899775242240>'):
-        await message.send('すまねぇ、今日は先約有りや…')
+        await message.channel.send('すまねぇ、今日は先約有りや…')
     print(message.content)
     await bot.process_commands(message)
     
