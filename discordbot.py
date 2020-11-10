@@ -16,6 +16,7 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
+    print(message.content)
     if random.randrange(10) < 2:
         if message.author.bot:
             return
