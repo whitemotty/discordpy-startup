@@ -1,20 +1,21 @@
-from discord.ext import commands
+#from discord.ext import commands
 import discord
 import os
 import traceback
 
-bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイト"))
+#bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイト"))
+client = discord.Client(activity=discord.Game("マックのバイト"))
 token = os.environ['DISCORD_BOT_TOKEN']
 
-
+"""
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
+"""
 
-
-@bot.event
+@client.event
 async def on_message(message):
     if message.author.bot:
         return
@@ -58,4 +59,4 @@ async def help(ctx):
     await ctx.send(embed=embed)
 """
 
-bot.run(token)
+client.run(token)
