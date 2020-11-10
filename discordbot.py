@@ -23,10 +23,10 @@ async def on_message(message):
         if message.content.startswith('💩') or message.content.startswith(':poop:'):
             await message.channel.send(':poop:')
             return
-        if message.content.startswith('<@!775343042567340053>'):
+        if message.content.startswith('<@775343042567340053>') or message.content.startswith('<@!775343042567340053>') or message.content.startswith('<@&775398756547690516>'):
             await message.channel.send('草')
             return
-        if message.content.startswith('<@!337590899775242240>'):
+        if message.content.startswith('<@337590899775242240>') or message.content.startswith('<@!337590899775242240>'):
             await message.channel.send('すまねぇ、今日は先約有りや…')
             return
         if message.content not in ['*help','*job','*today'] and random.randrange(10) < 3:
