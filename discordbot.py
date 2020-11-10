@@ -58,9 +58,6 @@ async def on_voice_state_update(member, before, after):
     if member.guild.id == 644381235753385985 and (before.channel != after.channel):
         alert_channel = bot.get_channel(644381236424343552)
         print("===")
-        print(before.channel)
-        print(before.channel.members)
-        print(len(before.channel.members))
         print(after.channel)
         print(after.channel.members)
         print(len(after.channel.members))
