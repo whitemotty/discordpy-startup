@@ -14,7 +14,7 @@ async def on_message(message):
         return
     if client.user in message.mentions:
         await message.channel.send('草')
-    if '<@!337590899775242240>' in message.content:
+    if message.content.startswith('<@!337590899775242240>')
         await message.channel.send('すまねぇ、今日は先約有りや…')
     if message.content.startswith('*job')
         await message.channel.send('今日はオープンクローズかな')
