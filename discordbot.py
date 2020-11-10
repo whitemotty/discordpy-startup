@@ -17,8 +17,8 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     if message.author.bot:
         return
-    if client.user in message.mentions:
-        await message.channel.send('草')
+    #if client.user in message.mentions:
+    #    await message.channel.send('草')
     if '<@!337590899775242240>' in message.content:
         await message.channel.send('すまねぇ、今日は先約有りや…')
 
