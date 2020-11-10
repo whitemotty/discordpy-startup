@@ -58,7 +58,7 @@ async def on_voice_state_update(member, before, after):
     if member.guild.id == 644381235753385985 and (before.channel != after.channel):
         alert_channel = bot.get_channel(644381236424343552)
         if before.channel is None: 
-            embed = discord.Embed(title="通話開始", description="通話が開始されました．俺はバイトあるから行けないや.", color=0x66cdaa)
+            embed = discord.Embed(title="通話開始", description="通話が開始されました．俺はバイトあるから行けないや.", color=0xffc0cb)
             embed.add_field(name="`ボイスチャンネル`", value=after.channel.name, inline=True)
             embed.add_field(name="`開始者`", value=member.name, inline=True)
             await alert_channel.send(embed=embed)
