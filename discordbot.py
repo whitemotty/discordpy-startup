@@ -1,10 +1,9 @@
 from discord.ext import commands
-import discord
 import os
 import traceback
 import random
 
-bot = commands.Bot(command_prefix='*', activity=discord.Game("マックのバイト"))
+bot = commands.Bot(command_prefix='*', activity="マックのバイト")
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
