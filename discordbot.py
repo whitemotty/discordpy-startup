@@ -16,7 +16,7 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    if random.randrange(10) == 0:
+    if random.randrange(10) < 3:
         if message.author.bot:
             return
         if message.content.startswith('<@!775343042567340053>'):
