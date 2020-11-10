@@ -29,7 +29,7 @@ async def on_message(message):
         if message.content.startswith('<@!337590899775242240>'):
             await message.channel.send('すまねぇ、今日は先約有りや…')
             return
-        if message.content not in ['*help','*job','*today']:
+        if message.content not in ['*help','*job','*today'] and random.randrange(10) < 3:
             await message.channel.send('呼んだ？')
             return
         await bot.process_commands(message)
