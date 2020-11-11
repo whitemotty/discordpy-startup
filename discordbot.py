@@ -30,8 +30,15 @@ async def on_message(message):
             await message.channel.send('すまねぇ、今日は先約有りや…')
             return
         if message.content not in ['*help','*job','*today'] and random.randrange(10) < 3:
-            await message.channel.send('呼んだ？')
-            return
+            if random.randrange(10) < 5:
+                await message.channel.send('呼んだ？')
+                return
+            if random.randrange(10) < 5:
+                await message.channel.send('ライトアモある？')
+                return
+            if random.randrange(10) < 5:
+                await message.channel.send('全部俺の')
+                return
         await bot.process_commands(message)
     return
     
@@ -57,12 +64,6 @@ async def help(ctx):
 async def on_voice_state_update(member, before, after): 
     if member.guild.id == 644381235753385985 and (before.channel != after.channel):
         alert_channel = bot.get_channel(644381236424343552)
-        print("===")
-        print(after.channel)
-        print(after.channel.id)
-        print(after.channel.members)
-        print(len(after.channel.members))
-        print("===")
         if before.channel is None and len(after.channel.members) == 1:
             embed = discord.Embed(title="通話開始", description="通話が開始されました．俺はバイトあるから行けないや．", color=0x66cdaa)
             embed.add_field(name="`ボイスチャンネル`", value=after.channel.name, inline=True)
