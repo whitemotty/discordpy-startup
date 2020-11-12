@@ -44,7 +44,7 @@ async def on_message(message):
             await message.channel.send(content='今日の俺のごはんこれだよ',file=discord.File(food_img))
             return
         if message.content not in con and random.randrange(10) < 3:
-            if random.randrange(10) < 5:
+            if random.randrange(11) < 5:
                 await message.channel.send('呼んだ？')
                 return
             else:
