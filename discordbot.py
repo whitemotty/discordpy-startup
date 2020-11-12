@@ -40,7 +40,7 @@ async def on_message(message):
             await message.channel.send(random.choice(can))
             return
         if '飯' in message.content:
-            food_img = path + random.choice(files)
+            food_img = path + "/" + random.choice(files)
             await message.channel.send(content='今日の俺のごはんこれだよ',file=discord.File(food_img))
             return
         if message.content not in con and random.randrange(10) < 3:
