@@ -8,6 +8,9 @@ bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイ�
 bot.remove_command("help")
 token = os.environ['DISCORD_BOT_TOKEN']
 
+path = "./foods"
+files = os.listdir(path)
+
 con = ['*help','*job','*today']
 can = ['すまねぇ、今日は先約有りや…','すまねぇ、今日は遊べないや','今日オープンクローズだから無理や…']
 ser = ['ライトアモある？','全部俺の','スト5やろうかな…','エペやりたみががが','ぎるぎあはもういっかなぁ…']
@@ -36,6 +39,10 @@ async def on_message(message):
         if message.content.startswith('<@337590899775242240>') or message.content.startswith('<@!337590899775242240>'):
             await message.channel.send(random.choice(can))
             return
+        if '飯' in message.content:
+            file = path + random.choice(files)
+            await message.channel.send(content='今日の俺のごはんこれだよ',file=file)
+            return
         if message.content not in con and random.randrange(10) < 3:
             if random.randrange(10) < 5:
                 await message.channel.send('呼んだ？')
@@ -45,7 +52,7 @@ async def on_message(message):
                 return
         await bot.process_commands(message)
     return
-    
+
 @bot.command()
 async def job(ctx):
     await ctx.send('今日はオープンクローズかな')
@@ -63,9 +70,9 @@ async def help(ctx):
     embed.add_field(name="*job", value="今日のバイトのシフトを伝えます", inline=False)
     embed.add_field(name="*today", value="今日の予定を伝えます", inline=False)
     await ctx.send(embed=embed)
-    
+
 @bot.event
-async def on_voice_state_update(member, before, after): 
+async def on_voice_state_update(member, before, after):
     if member.guild.id == 644381235753385985 and (before.channel != after.channel):
         alert_channel = bot.get_channel(644381236424343552)
         if before.channel is None and len(after.channel.members) == 1:
