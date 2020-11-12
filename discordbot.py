@@ -8,6 +8,10 @@ bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイ�
 bot.remove_command("help")
 token = os.environ['DISCORD_BOT_TOKEN']
 
+con = ['*help','*job','*today']
+can = ['すまねぇ、今日は先約有りや…','すまねぇ、今日は遊べないや','今日オープンクローズだから無理や…']
+ser = ['ライトアモある？','全部俺の','スト5やろうかな…','エペやりたみががが','ぎるぎあはもういっかなぁ…']
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -17,9 +21,12 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_message(message):
     print(message.content)
+    if message.author.bot:
+        return
+    if message.content.startswith('*help'):
+        await bot.process_commands(message)
+        return
     if random.randrange(10) < 2:
-        if message.author.bot:
-            return
         if message.content.startswith('💩') or message.content.startswith(':poop:'):
             await message.channel.send(':poop:')
             return
@@ -27,17 +34,14 @@ async def on_message(message):
             await message.channel.send('草')
             return
         if message.content.startswith('<@337590899775242240>') or message.content.startswith('<@!337590899775242240>'):
-            await message.channel.send('すまねぇ、今日は先約有りや…')
+            await message.channel.send(random.choice(can))
             return
-        if message.content not in ['*help','*job','*today'] and random.randrange(10) < 3:
+        if message.content not in con and random.randrange(10) < 3:
             if random.randrange(10) < 5:
                 await message.channel.send('呼んだ？')
                 return
-            if random.randrange(10) < 5:
-                await message.channel.send('ライトアモある？')
-                return
-            if random.randrange(10) < 5:
-                await message.channel.send('全部俺の')
+            else:
+                await message.channel.send(random.choice(ser))
                 return
         await bot.process_commands(message)
     return
