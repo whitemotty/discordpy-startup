@@ -13,7 +13,7 @@ files = os.listdir(path)
 
 con = ['*help','*job','*today']
 can = ['すまねぇ、今日は先約有りや…','すまねぇ、今日は遊べないや','今日オープンクローズだから無理や…']
-ser = ['ライトアモある？','全部俺の','スト5やろうかな…','エペやりたみががが','ぎるぎあはもういっかなぁ…']
+ser = ['呼んだ？','ライトアモある？','全部俺の','スト5やろうかな…','エペやりたみががが','ぎるぎあはもういっかなぁ…']
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -44,12 +44,8 @@ async def on_message(message):
             await message.channel.send(content='今日の俺のごはんこれだよ',file=discord.File(food_img))
             return
         if message.content not in con and random.randrange(10) < 3:
-            if random.randrange(11) < 5:
-                await message.channel.send('呼んだ？')
-                return
-            else:
-                await message.channel.send(random.choice(ser))
-                return
+            await message.channel.send(random.choice(ser))
+            return
         await bot.process_commands(message)
     return
 
