@@ -43,7 +43,7 @@ async def on_message(message):
             food_img = path + "/" + random.choice(files)
             await message.channel.send(content='今日の俺のごはんこれだよ',file=discord.File(food_img))
             return
-        if message.content not in con and random.randrange(10) < 3:
+        if message.content not in con and random.randrange(10) < 1:
             await message.channel.send(random.choice(ser))
             return
         await bot.process_commands(message)
