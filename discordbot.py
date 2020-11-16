@@ -8,8 +8,11 @@ bot = commands.Bot(command_prefix='*',activity=discord.Game("マックのバイ�
 bot.remove_command("help")
 token = os.environ['DISCORD_BOT_TOKEN']
 
-path = "./foods"
-files = os.listdir(path)
+food_path = "./foods"
+food_files = os.listdir(food_path)
+
+fuze_path = "./fuze"
+fuze_files = os.listdir(fuze_path)
 
 con = ['*help','*job','*today']
 can = ['すまねぇ、今日は先約有りや…','すまねぇ、今日は遊べないや','今日オープンクローズだから無理や…']
@@ -29,6 +32,15 @@ async def on_message(message):
     if message.content.startswith('*help'):
         await bot.process_commands(message)
         return
+    if message.content.startswith('<@345945099303256065>') or message.content.startswith('<@!345945099303256065>'):
+        if random.randrange(10) < 5:
+            fuze_img = path + "/" + fuze_files[0]
+            await message.channel.send(content='もりちゃんだよ',file=discord.File(fuze_img))
+            return
+        else:
+            fuze_img = path + "/" + fuze_files[1]
+            await message.channel.send(content='逆もりちゃんだよ',file=discord.File(fuze_img))
+            return
     if random.randrange(10) < 2:
         if message.content.startswith('💩') or message.content.startswith(':poop:'):
             await message.channel.send(':poop:')
@@ -40,7 +52,7 @@ async def on_message(message):
             await message.channel.send(random.choice(can))
             return
         if '飯' in message.content:
-            food_img = path + "/" + random.choice(files)
+            food_img = path + "/" + random.choice(food_files)
             await message.channel.send(content='今日の俺のごはんこれだよ',file=discord.File(food_img))
             return
         if message.content not in con and random.randrange(10) < 1:
