@@ -22,14 +22,22 @@ emb.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/commons/f/f6/AK-47
 emb.add_field(name="口径", value="7.62 mm", inline=False)
 emb.add_field(name="全長", value="870 mm", inline=False)
 emb.add_field(name="重量", value="4,400 g（マガジン付）", inline=False)
-emb.add_field(name="発射速度", value="600発/分", inline=False)
+emb.add_field(name="発射速度", value="600 発/分", inline=False)
 dic = {'AK-47':emb}
 
 emb =discord.Embed(title="レミントンM870", description="1960年代中期にアメリカのレミントン・アームズ社がM31の後継として開発したポンプアクション式散弾銃．", color=0x4682b4)
 emb.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfSvbZNg_oY_mHTPkDRMI-mKN_R9FEi7RB0g&usqp=CAU")
-emb.add_field(name="全長", value="946-1,245mm", inline=False)
-emb.add_field(name="重量", value="3.2-3.6kg", inline=False)
+emb.add_field(name="全長", value="946-1,245 mm", inline=False)
+emb.add_field(name="重量", value="3.2-3.6 kg", inline=False)
 dic['M870'] = emb
+
+emb = discord.Embed(title="FN P90", description="1980年代末にベルギーのFN社が開発したPDW．", color=0x4682b4)
+emb.set_thumbnail(url="https://lh3.googleusercontent.com/proxy/s7pli0maIJLFeCseUnUWLHsp6iQxCuhc20VRu1yurCo8QYygHQ__JJNPKyhgQN81BsORW_-dtihXuEJpICaEH_8i0-ULkl_e1ZINFuIK3ATcy48gBLS1S05qug")
+emb.add_field(name="口径", value="5.7 mm", inline=False)
+emb.add_field(name="全長", value="500 mm", inline=False)
+emb.add_field(name="重量", value="3.0 kg（装填時）", inline=False)
+emb.add_field(name="発射速度", value="900 発/分", inline=False)
+dic['P90'] = emb
 
 @bot.event
 async def on_command_error(ctx, error):
