@@ -25,6 +25,12 @@ emb.add_field(name="重量", value="4,400 g（マガジン付）", inline=False)
 emb.add_field(name="発射速度", value="600発/分", inline=False)
 dic = {'AK-47':emb}
 
+emb =discord.Embed(title="レミントンM870", description="1960年代中期にアメリカのレミントン・アームズ社がM31の後継として開発したポンプアクション式散弾銃．", color=0x4682b4)
+emb.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfSvbZNg_oY_mHTPkDRMI-mKN_R9FEi7RB0g&usqp=CAU")
+emb.add_field(name="全長", value="946-1,245mm", inline=False)
+emb.add_field(name="重量", value="3.2-3.6kg", inline=False)
+dic['M870'] = emb
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
