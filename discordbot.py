@@ -12,7 +12,6 @@ food_path = "./foods"
 food_files = os.listdir(food_path)
 
 fuze_path = "./fuze"
-fuze_files = os.listdir(fuze_path)
 
 con = ['*help','*job','*today']
 can = ['すまねぇ、今日は先約有りや…','すまねぇ、今日は遊べないや','今日オープンクローズだから無理や…']
@@ -34,11 +33,11 @@ async def on_message(message):
         return
     if message.content.startswith('<@345945099303256065>') or message.content.startswith('<@!345945099303256065>'):
         if random.randrange(10) < 5:
-            fuze_img = fuze_path + "/" + fuze_files[0]
+            fuze_img = fuze_path + "/fuze.png"
             await message.channel.send(content='もりちゃんだよ',file=discord.File(fuze_img))
             return
         else:
-            fuze_img = fuze_path + "/" + fuze_files[1]
+            fuze_img = fuze_path + "/gul.png"
             await message.channel.send(content='逆もりちゃんだよ',file=discord.File(fuze_img))
             return
     if random.randrange(10) < 2:
