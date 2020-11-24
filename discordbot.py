@@ -17,6 +17,14 @@ con = ['*help','*job','*today']
 can = ['すまねぇ、今日は先約有りや…','すまねぇ、今日は遊べないや','今日オープンクローズだから無理や…']
 ser = ['いきたみ','呼んだ？','ライトアモある？','全部俺の','スト5やろうかな…','エペやりたみががが','ぎるぎあはもういっかなぁ…']
 
+emb = discord.Embed(title="AK-47", description="1949年にソビエト連邦軍が正式採用した自動小銃．", color=0xff8c00)
+emb.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/commons/f/f6/AK-47_assault_rifle.jpg")
+emb.add_field(name="口径", value="7.62 mm", inline=False)
+emb.add_field(name="全長", value="870 mm", inline=False)
+emb.add_field(name="重量", value="4,400 g（マガジン付）", inline=False)
+emb.add_field(name="発射速度", value="600発/分", inline=False)
+dic = {'AK-47':emb}
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -30,6 +38,9 @@ async def on_message(message):
         return
     if message.content.startswith('*help'):
         await bot.process_commands(message)
+        return
+    if message.content in dic:
+        await message.channel.send(embed=dic[message.content])
         return
     if message.content.startswith('<@345945099303256065>') or message.content.startswith('<@!345945099303256065>'):
         if random.randrange(10) < 5:
