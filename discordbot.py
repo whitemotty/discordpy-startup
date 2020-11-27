@@ -32,7 +32,7 @@ async def on_message(message):
     if message.content.startswith('*help'):
         await bot.process_commands(message)
         return
-    if message.content in dic:
+    if message.content in gun.dic:
         await message.channel.send(embed=gun.dic[message.content])
         return
     if message.content.startswith('<@345945099303256065>') or message.content.startswith('<@!345945099303256065>'):
