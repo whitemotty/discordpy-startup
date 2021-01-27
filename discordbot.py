@@ -54,6 +54,9 @@ async def on_message(message):
         if message.content.startswith('<@337590899775242240>') or message.content.startswith('<@!337590899775242240>'):
             await message.channel.send(random.choice(can))
             return
+        if 'ゆーし' in message.content:
+            await message.channel.send('呼んだ？')
+            return
         if '飯' in message.content:
             food_img = food_path + "/" + random.choice(food_files)
             await message.channel.send(content='今日の俺のごはんこれだよ',file=discord.File(food_img))

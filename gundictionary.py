@@ -20,9 +20,17 @@ emb = discord.Embed(title="H&K MP5", description="1966年にドイツのヘッ�
 emb.set_thumbnail(url="https://previews.123rf.com/images/snak/snak1305/snak130500559/19950768-9-mm-%E3%81%AE%E7%9F%AD%E6%A9%9F%E9%96%A2%E9%8A%83-mp5-%E3%81%AE%E5%88%86%E9%9B%A2.jpg")
 emb.add_field(name="口径", value="9 mm", inline=False)
 emb.add_field(name="全長", value="550 mm", inline=False)
-emb.add_field(name="重量", value="3.08 kg）", inline=False)
+emb.add_field(name="重量", value="3.08 kg", inline=False)
 emb.add_field(name="発射速度", value="800 発/分", inline=False)
 dic['MP5'] = emb
+
+emb = discord.Embed(title="L85A2", description="2001年にイギリスで開発されたアサルトライフル．ヘッケラー&コッホ社（H&K）が改良した．", color=0x4682b4)
+emb.set_thumbnail(url="https://previews.123rf.com/images/snak/snak1407/snak140700002/29715825-l85-%E3%81%8C%E7%99%BD%E3%81%84%E8%83%8C%E6%99%AF%E3%81%AB%E5%88%86%E9%9B%A2%E3%81%95%E3%82%8C%E3%81%9F%E3%82%A4%E3%82%AE%E3%83%AA%E3%82%B9%E3%81%AE%E3%82%A2%E3%82%B5%E3%83%AB%E3%83%88%E3%83%A9%E3%82%A4%E3%83%95%E3%83%AB.jpg")
+emb.add_field(name="口径", value="5.56 mm", inline=False)
+emb.add_field(name="全長", value="785 mm", inline=False)
+emb.add_field(name="重量", value="3,820 g（本体のみ）", inline=False)
+emb.add_field(name="発射速度", value="610-775 発/分", inline=False)
+dic['L85A2'] = emb
 
 emb =discord.Embed(title="レミントンM870", description="1960年代中期にアメリカのレミントン・アームズ社がM31の後継として開発したポンプアクション式散弾銃．", color=0x808080)
 emb.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfSvbZNg_oY_mHTPkDRMI-mKN_R9FEi7RB0g&usqp=CAU")
