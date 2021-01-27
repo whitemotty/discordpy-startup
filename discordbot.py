@@ -40,9 +40,13 @@ async def on_message(message):
             fuze_img = fuze_path + "/fuze.png"
             await message.channel.send(content='もりちゃんだよ',file=discord.File(fuze_img))
             return
-        else:
+        elif random.randrange(10) < 9:
             fuze_img = fuze_path + "/gul.png"
             await message.channel.send(content='逆もりちゃんだよ',file=discord.File(fuze_img))
+            return
+        else:
+            fuze_img = fuze_path + "/morizo.png"
+            await message.channel.send(content='偽もりちゃんだよ',file=discord.File(fuze_img))
             return
     if random.randrange(10) < 2:
         if message.content.startswith('💩') or message.content.startswith(':poop:'):
